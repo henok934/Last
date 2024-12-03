@@ -1,5 +1,3 @@
-# install_package.py
-
 import subprocess
 
 def run_command(command):
@@ -12,7 +10,7 @@ def run_command(command):
         print(f"Error Output:\n{e.stderr}")
 
 def main():
-    # Replace 'your_package' with the actual package name you want to install
+    # Replace 'your_package' with the actual package you want to install
     command = ["pip", "install", "your_package"]
     run_command(command)
 
