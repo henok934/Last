@@ -1,4 +1,4 @@
-#!/home/henok/H/Last/myproje/myenv/bin/python3.9
+#!/home/henok/H/Last/myproje/myenv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
