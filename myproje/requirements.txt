@@ -15,7 +15,6 @@ ipdb==0.13.13
 ipython==8.12.3
 ipywidgets==8.1.5
 jnius==1.1.0
-keyring==25.2.1
 keyring==23.5.0
 lockfile==0.12.2
 lxml==5.2.2
