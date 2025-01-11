@@ -444,9 +444,9 @@ ALLOWED_HOSTS = [
 ]
 """
 
-#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = ['ticket.glitch.me']
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
