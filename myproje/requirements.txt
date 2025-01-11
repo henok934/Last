@@ -1,5 +1,6 @@
 attr==0.3.2
 bpython==0.24
+django==3.2.12
 brotli==1.1.0
 ConfigParser==7.1.0
 cx_Oracle==8.3.0
