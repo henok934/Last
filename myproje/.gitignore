@@ -11,3 +11,25 @@ __pycache__/
 # Ignore saved Python files
 install_package.py.save
 install_package.py.save.1
+
+# Ignore database files
+db.sqlite3
+
+# Ignore environment folders
+newenv/
+myenv/
+venv/
+
+# Ignore backup files
+*.save
+
+# Ignore compiled Python files
+__pycache__/
+
+# Ignore unnecessary deployment scripts if not used
+build.sh
+start.sh
+render.yaml
+
+# Ignore other unnecessary files
+glitch.json
