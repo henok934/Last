@@ -539,7 +539,7 @@ class Admin(models.Model):
         return f"{self.fname} - {self.phone} - {self.lname} - {self.gender} - {self.email} - {self.username} - {self.password}"
 """
 
-
+"""
 class Buschange(models.Model):
     new_side_no = models.CharField(max_length=50, null=True, blank=True)
     new_plate_no = models.CharField(max_length=50, null=True, blank=True)
@@ -561,4 +561,5 @@ class Buschange(models.Model):
     )
     def __str__(self):
         return f"{self.depcity} - {self.descity}, {self.new_side_no} - {self.new_plate_no}, - {self.plate_no} - {self.side_no} - {self.date}"
+    """
 

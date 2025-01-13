@@ -7,28 +7,29 @@ from .models import Route
 from django.db import IntegrityError
 from .models import City
 from .models import Worker
-from .models import Buschange
+#from .models import Buschange
 from .models import Admin
 from .models import Ticket
 from django.contrib.auth import authenticate, login as auth_login
 
 from django.shortcuts import render
-from .models import Buschange, City  # Ensure you import your models
+#from .models import Buschange, City  # Ensure you import your models
 
 def home(request):
-    buschanges = Buschange.objects.all()
+    """buschanges = Buschange.objects.all()
     buschanges_count = buschanges.count()
+    """
     
     des = City.objects.all()
-    
-    # Prepare context
+
     context = {
         'des': des,
     }
     
-    # Only add buschanges_count if it's greater than 0
+    """
     if buschanges_count > 0:
         context['buschanges_count'] = buschanges_count
+    """
     
     return render(request, 'users/index.html', context)
 
@@ -36,20 +37,24 @@ def home(request):
 def profile(request):
     return render(request, 'users/profile.html')
 def about(request):
+    """
     buschanges = Buschange.objects.all()
     buschanges_count = buschanges.count()
     context = {}
     # Only add buschanges_count if it's greater than 0
     if buschanges_count > 0:
         context['buschanges_count'] = buschanges_count
+    """
 
     return render(request, 'users/about.html', context)
 def driver(request):
     driver = Worker.objects.all()
     return render(request, 'users/drivers.html', {'driver': driver})
 def offers(request):
+    """
     buschanges = Buschange.objects.all()
     buschanges_count = buschanges.count()
+    """
     des = City.objects.all()
     context = {
         'des': des,
@@ -62,7 +67,7 @@ def offers(request):
 
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login as auth_login
-from .models import Buschange, Worker, Route
+#from .models import Buschange, Worker, Route
 
 def login(request):
     buschanges = Buschange.objects.all()
@@ -223,8 +228,10 @@ def comment(request):
     return render(request, 'users/comment.html',{'buschanges_count':  buschanges_count})
 def get_ticket(request):
     des = City.objects.all()
+    """
     buschanges = Buschange.objects.all()
     buschanges_count = buschanges.count()
+    """
 
     if request.method == 'POST':
         depcity = request.POST.get('depcity')
@@ -615,8 +622,10 @@ def Selectbus(request):
 from django.shortcuts import render
 from .models import City, Route, Bus, Ticket  # Adjust based on your actual model imports
 def book(request):
+    """
     buschanges = Buschange.objects.all()
     buschanges_count = buschanges.count()
+    """
 
     des = City.objects.all()
     if request.method == 'POST':
@@ -1988,8 +1997,8 @@ def changebus(request):
 from django.utils import timezone
 from datetime import timedelta
 from django.shortcuts import render
-from .models import Bus, Route, Ticket, Buschange
-
+from .models import Bus, Route, Ticket
+"""
 def changebus(request):
     routes = Route.objects.all()
     buses = Bus.objects.all()
@@ -2097,7 +2106,7 @@ def changebus(request):
         'routes': routes,
         'buses': buses
     })
-
+"""
 
 
 
