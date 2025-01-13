@@ -13,8 +13,6 @@ install_package.py.save
 install_package.py.save.1
 
 # Ignore database files
-db.sqlite3
-
 # Ignore environment folders
 newenv/
 myenv/

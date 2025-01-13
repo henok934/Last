@@ -539,7 +539,6 @@ class Admin(models.Model):
         return f"{self.fname} - {self.phone} - {self.lname} - {self.gender} - {self.email} - {self.username} - {self.password}"
 """
 
-
 class Buschange(models.Model):
     new_side_no = models.CharField(max_length=50, null=True, blank=True)
     new_plate_no = models.CharField(max_length=50, null=True, blank=True)
