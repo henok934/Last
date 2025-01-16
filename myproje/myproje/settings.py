@@ -435,7 +435,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
 
-DEBUG = True
+DEBUG = False
 """
 ALLOWED_HOSTS = [
     'users.onrender.com',
@@ -443,10 +443,10 @@ ALLOWED_HOSTS = [
     'yourdomain.com',
 ]
 """
-
-#ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['159.223.207.122']
+ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = ['ticket.glitch.me']
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
