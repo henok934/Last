@@ -3,7 +3,6 @@ pyyaml/
 # Ignore virtual environments
 myenv/
 newenv/
-venv/
 
 # Ignore Python cache directories
 __pycache__/
