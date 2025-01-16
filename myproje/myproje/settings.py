@@ -17,7 +17,6 @@ STATICFILES_DIRS = [
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -430,10 +429,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 from pathlib import Path
 import os
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
+<<<<<<< HEAD
 
 DEBUG = False
 """
@@ -448,8 +446,11 @@ ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = ['ticket.glitch.me']
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
 
+=======
+DEBUG = False
+ALLOWED_HOSTS = ['*']
+>>>>>>> f97e90233ee0a2e34d2cdb97467e5d03625af100
 AUTH_USER_MODEL = 'users.CustomUser'
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -457,12 +458,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users',  # Your app
+    'users',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # For serving static files
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -490,48 +489,25 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'myproje.wsgi.application'
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase',        # Replace with your database name
-        'USER': 'myuser',            # Replace with your PostgreSQL username
-        'PASSWORD': 'mypassword',    # Replace with your PostgreSQL password
-        'HOST': 'localhost',          # Use 'localhost' for local development
-        'PORT': '5432',               # Default PostgreSQL port
-    }
-}
-"""
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # SQLite database file
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'my_database',              # Your database name
-        'USER': 'my_user',                  # Your PostgreSQL username
-        'PASSWORD': 'my_secure_password',    # Your PostgreSQL password
-        'HOST': 'localhost',                 # Typically 'localhost'
-        'PORT': '5432',                      # Default PostgreSQL port
-    }
-}
-"""
-
-
-
 
 STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_ROOT = BASE_DIR / 'assets'
+
+"""STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+"""
+
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Adjust as necessary
+    BASE_DIR / 'users/static',  # This is for development to find static files
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

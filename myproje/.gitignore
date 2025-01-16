@@ -26,6 +26,10 @@ __pycache__/
 
 # Ignore unnecessary deployment scripts if not used
 build.sh
+<<<<<<< HEAD
+=======
+start.sh
+>>>>>>> f97e90233ee0a2e34d2cdb97467e5d03625af100
 render.yaml
 
 # Ignore other unnecessary files
