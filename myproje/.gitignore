@@ -3,7 +3,6 @@ pyyaml/
 # Ignore virtual environments
 myenv/
 newenv/
-venv/
 
 # Ignore Python cache directories
 __pycache__/
@@ -13,8 +12,6 @@ install_package.py.save
 install_package.py.save.1
 
 # Ignore database files
-db.sqlite3
-
 # Ignore environment folders
 newenv/
 myenv/
@@ -28,7 +25,10 @@ __pycache__/
 
 # Ignore unnecessary deployment scripts if not used
 build.sh
+<<<<<<< HEAD
+=======
 start.sh
+>>>>>>> f97e90233ee0a2e34d2cdb97467e5d03625af100
 render.yaml
 
 # Ignore other unnecessary files

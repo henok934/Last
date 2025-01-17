@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+gunicorn==23.0.0
+packaging==24.2
+=======
 attr==0.3.2
 bpython==0.24
 django==3.2.12
@@ -47,3 +51,4 @@ tornado==6.4.2
 trove_classifiers==2025.1.7.14
 urllib3_secure_extra==0.1.0
 xx==3.3.2
+>>>>>>> f97e90233ee0a2e34d2cdb97467e5d03625af100

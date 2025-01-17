@@ -356,6 +356,7 @@ from django.db import models
 from django.utils import timezone
 from datetime import timedelta
 import random
+import os
 import string
 class Ticket(models.Model):
     # Unique ticket ID
@@ -392,10 +393,26 @@ class Ticket(models.Model):
     def formatted_booked_time(self):
         local_booked_time = self.booked_time.astimezone(timezone.get_current_timezone())
         return local_booked_time.strftime('%m,%d,%Y %I:%M %p')
+   
 
     def __str__(self):
+        barcode_image = self.generate_barcode()
+        return f"{self.firstname} - {self.phone} - {self.lastname} - {self.pnr} - {self.price}, {self.descity} - {self.depcity} - {self.no_seat} - {self.plate_no} - {self.side_no} - {self.date}, {self.barcode_image}, {self.ticket_id}"
 
-        return f"{self.firstname} - {self.phone} - {self.lastname} - {self.pnr} - {self.price}, {self.descity} - {self.depcity} - {self.no_seat} - {self.plate_no} - {self.side_no} - {self.date}, ID: {self.ticket_id}"
+
+
+    def generate_barcode(self):
+        """Generate a barcode image for the ticket ID."""
+        barcode_format = 'code128'
+        barcode_value = str(self.ticket_id)
+        barcode_image = barcode.encode(barcode_format, barcode_value, writer=ImageWriter())
+
+        barcode_path = f'static/barcodes/{barcode_value}.png'
+        if not os.path.exists('static/barcodes'):
+            os.makedirs('static/barcodes')
+    
+            barcode_image.save(barcode_path)
+            return barcode_path
 
     def save(self, *args, **kwargs):
         # Generate a unique PNR if not already set
@@ -406,6 +423,12 @@ class Ticket(models.Model):
     def generate_pnr(self):
         """Generate a random PNR consisting of 6 lowercase characters."""
         return ''.join(random.choices(string.ascii_uppercase, k=6))
+
+
+
+
+
+
 
 
 
@@ -538,7 +561,6 @@ class Admin(models.Model):
     def __str__(self):
         return f"{self.fname} - {self.phone} - {self.lname} - {self.gender} - {self.email} - {self.username} - {self.password}"
 """
-
 
 class Buschange(models.Model):
     new_side_no = models.CharField(max_length=50, null=True, blank=True)

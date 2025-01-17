@@ -431,8 +431,29 @@ from pathlib import Path
 import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
+<<<<<<< HEAD
+DEBUG = False
+=======
+<<<<<<< HEAD
+
+DEBUG = False
+"""
+ALLOWED_HOSTS = [
+    'users.onrender.com',
+    'www.yourdomain.com',
+    'yourdomain.com',
+]
+"""
+#ALLOWED_HOSTS = ['159.223.207.122']
+>>>>>>> origin/main
+ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['ticket.glitch.me']
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
+
+=======
 DEBUG = False
 ALLOWED_HOSTS = ['*']
+>>>>>>> f97e90233ee0a2e34d2cdb97467e5d03625af100
 AUTH_USER_MODEL = 'users.CustomUser'
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -481,9 +502,16 @@ DATABASES = {
 }
 
 STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_ROOT = BASE_DIR / 'assets'
-STATICFILES_DIRS = [
+
+"""STATICFILES_DIRS = [
     BASE_DIR / "static",
+]
+"""
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'users/static',  # This is for development to find static files
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
