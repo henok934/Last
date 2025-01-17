@@ -428,10 +428,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 """
 
-
-
-
-
 from pathlib import Path
 import os
 
@@ -439,15 +435,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
 
-DEBUG = False  # Set to False for production
-
+DEBUG = True
+"""
 ALLOWED_HOSTS = [
     'users.onrender.com',
     'www.yourdomain.com',
     'yourdomain.com',
 ]
-#ALLOWED_HOSTS = ['127.0.0.1', 'localhost']  # Update for production
-
+"""
+#ALLOWED_HOSTS = ['159.223.207.122']
+ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['ticket.glitch.me']
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
@@ -491,18 +490,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'myproje.wsgi.application'
-
-
-
 """
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # SQLite database file
-    }
-}
-"""
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -513,6 +501,30 @@ DATABASES = {
         'PORT': '5432',               # Default PostgreSQL port
     }
 }
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # SQLite database file
+    }
+}
+
+
+
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'my_database',              # Your database name
+        'USER': 'my_user',                  # Your PostgreSQL username
+        'PASSWORD': 'my_secure_password',    # Your PostgreSQL password
+        'HOST': 'localhost',                 # Typically 'localhost'
+        'PORT': '5432',                      # Default PostgreSQL port
+    }
+}
+"""
+
 
 
 
@@ -534,6 +546,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Addis_Ababa'
 USE_I18N = True
 USE_TZ = True
