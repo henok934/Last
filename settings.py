@@ -436,6 +436,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
 
 DEBUG = True
+
 """
 ALLOWED_HOSTS = [
     'users.onrender.com',
