@@ -1,5 +1,4 @@
 pyyaml/
-<<<<<<< HEAD
 myenv
 newenv
 Procfile
@@ -8,7 +7,6 @@ install_package.py.save.1
 build.sh 
 start.sh
 test_email.py
-=======
 
 # Ignore virtual environments
 myenv/
@@ -35,12 +33,9 @@ __pycache__/
 
 # Ignore unnecessary deployment scripts if not used
 build.sh
-<<<<<<< HEAD
-=======
 start.sh
->>>>>>> f97e90233ee0a2e34d2cdb97467e5d03625af100
 render.yaml
 
 # Ignore other unnecessary files
 glitch.json
->>>>>>> origin/main
+
