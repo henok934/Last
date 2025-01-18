@@ -104,6 +104,7 @@ Werkzeug==2.0.2
 xdg==5
 xkit==0.0.0
 zipp==1.0.0
+wheel==0.45.1
 zope.component==4.3.0
 zope.event==4.4
 zope.hookable==5.1.0
