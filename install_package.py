@@ -10,9 +10,12 @@ def run_command(command):
         print(f"Error Output:\n{e.stderr}")
 
 def main():
-    # Replace 'your_package' with the actual package you want to install
-    command = ["pip", "install", "your_package"]
-    run_command(command)
+    with open('requirements.txt') as f:
+        packages = [line.strip() for line in f if line.strip()]
+    for package in packages:
+        command = ["pip", "install", package]
+        print(f"Installing: {package}")
+        run_command(command)
 
 if __name__ == "__main__":
     main()

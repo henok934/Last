@@ -13,7 +13,7 @@ unnecessary_packages = installed_packages - required_packages
 
 # Uninstall unnecessary packages
 for package in unnecessary_packages:
-    print(f"Uninstalling: {package}")  # Added print statement for clarity
+    print(f"Uninstalling: {package}")  # Print for clarity
     result = subprocess.run(['pip', 'uninstall', package, '-y'], capture_output=True, text=True)
     if result.returncode != 0:
         print(f"Error uninstalling {package}: {result.stderr}")  # Print error if it occurs
