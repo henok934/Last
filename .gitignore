@@ -1,0 +1,46 @@
+pyyaml/
+<<<<<<< HEAD
+myenv
+newenv
+Procfile
+install_package.py.save
+install_package.py.save.1
+build.sh 
+start.sh
+test_email.py
+=======
+
+# Ignore virtual environments
+myenv/
+newenv/
+
+# Ignore Python cache directories
+__pycache__/
+
+# Ignore saved Python files
+install_package.py.save
+install_package.py.save.1
+
+# Ignore database files
+# Ignore environment folders
+newenv/
+myenv/
+venv/
+
+# Ignore backup files
+*.save
+
+# Ignore compiled Python files
+__pycache__/
+
+# Ignore unnecessary deployment scripts if not used
+build.sh
+<<<<<<< HEAD
+=======
+start.sh
+>>>>>>> f97e90233ee0a2e34d2cdb97467e5d03625af100
+render.yaml
+
+# Ignore other unnecessary files
+glitch.json
+>>>>>>> origin/main

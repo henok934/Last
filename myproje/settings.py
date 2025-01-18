@@ -17,7 +17,10 @@ STATICFILES_DIRS = [
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 12310459 (hosting)
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -430,10 +433,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 from pathlib import Path
 import os
+<<<<<<< HEAD
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
+=======
+BASE_DIR = Path(__file__).resolve().parent.parent
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
+<<<<<<< HEAD
+>>>>>>> 12310459 (hosting)
 
 DEBUG = True
 """
@@ -448,6 +457,13 @@ ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = ['ticket.glitch.me']
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
 
+<<<<<<< HEAD
+=======
+=======
+DEBUG = False
+ALLOWED_HOSTS = ['*']
+>>>>>>> origin/main
+>>>>>>> 12310459 (hosting)
 AUTH_USER_MODEL = 'users.CustomUser'
 
 INSTALLED_APPS = [
@@ -457,12 +473,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'users',  # Your app
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',  # For serving static files
+=======
+    'users',
+]
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+>>>>>>> 12310459 (hosting)
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -532,6 +555,21 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'assets'
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # Adjust as necessary
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'assets'
+
+"""STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+"""
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'users/static',  # This is for development to find static files
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
