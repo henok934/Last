@@ -14,4 +14,7 @@ unnecessary_packages = installed_packages - required_packages
 # Uninstall unnecessary packages
 for package in unnecessary_packages:
     subprocess.call(['pip', 'uninstall', package, '-y'])
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
