@@ -443,10 +443,10 @@ ALLOWED_HOSTS = [
     'yourdomain.com',
 ]
 """
-
-#ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['159.223.207.122']
+ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = ['ticket.glitch.me']
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
