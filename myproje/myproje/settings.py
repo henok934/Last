@@ -431,9 +431,9 @@ from pathlib import Path
 import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
-<<<<<<< HEAD
 
 DEBUG = True
+
 """
 ALLOWED_HOSTS = [
     'users.onrender.com',
@@ -446,10 +446,8 @@ ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = ['ticket.glitch.me']
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ticket.glitch.me']
 
-=======
-DEBUG = False
 ALLOWED_HOSTS = ['*']
->>>>>>> origin/main
+
 AUTH_USER_MODEL = 'users.CustomUser'
 
 INSTALLED_APPS = [
