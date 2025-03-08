@@ -60,13 +60,29 @@ TEMPLATES = [
 # WSGI application
 WSGI_APPLICATION = 'myproje.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Tickets',  # Replace with your database name
+        'USER': 'Tickets',  # Replace with your database user
+        'PASSWORD': 'teklemariam',  # Replace with your database password
+        'HOST': 'localhost',  # or IP address
+        'PORT': '5432',  # Default PostgreSQL port
+    }
+}
+"""
+
+
 
 AUTH_USER_MODEL = 'users.CustomUser'  # Replace with your app name
 
@@ -85,17 +101,6 @@ from pathlib import Path
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-"""
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will gather static files
-STATICFILES_DIRS = [
-    BASE_DIR / 'users/static',  # Additional directories to find static files during development
-]
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-"""
-
 
 # settings.py
 
