@@ -14,7 +14,6 @@
 <link rel="stylesheet" type="text/css" href="../static/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="../static/styles/responsive.css">
 </head>
-
 <body>
 <div class="super_container">
 	<header class="header">
@@ -129,69 +128,6 @@
 </style>
 
 
-
-
-<!--
-
-				<nav class="main_nav">
-				<div class="container">
-				<div class="row">
-					<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
-						<div class="logo_container">
-							<div class="logo"><a href="#"><img src="../static/images/logo.png" alt="">ticket</a></div>
-						</div>
-
-
-						<div class="main_nav_container ml-auto">
-							<ul class="main_nav_list">
-							
-
-							<li class="main_nav_item"><a href="{% url 'home' %}">home</a></li>
-                           <select onchange="location.href = this.value;">
-                           <option value="#">Select for Register</option>
-                           <option value="{% url 'businsert' %}">Register Bus</option>
-                           <option value="{% url 'route' %}">Register Route</option>
-                           <option value="{% url 'registor' %}">Register Admin</option>
-                           <option value="{% url 'city' %}">Register City</option>
-                           <option value="{% url 'worker' %}">Register Driver</option>
-                           </select>
-                          <select onchange="location.href = this.value;">
-                          <option value="#">Select for Update</option>
-                           <option value="{% url 'updatebus' %}">Update Side_no</option>
-                           <option value="{% url 'changebus' %}">Change Bus</option>
-                           </select>
-                           <select onchange="location.href = this.value;">
-                           <option value="{% url 'admindelete' %}">Select for Show</option>
-                           <option value="{% url 'routes' %}">show routes</option>
-                           <option value="{% url 'users' %}">show Users</option>
-                           <option value="{% url 'buses' %}">show Buses</option>
-                           <option value="{% url 'comments' %}">Show Comments</option>
-                           <option value="{% url 'driver' %}">Driver</option>
-                           <option value="{% url 'ticketinfo' %}">Booked Ticket</option>
-                           </select>
-                           <select onchange="location.href = this.value;">
-                           <option value="{% url 'admindelete' %}">Select for Delete</option>
-                           <option value="{% url 'admindelete' %}">Delete Admin</option>
-                           <option value="{% url 'commentdelete' %}">Delete Comment</option>
-                           <option value="{% url 'busdelete' %}">Delete Bus</option>
-                           <option value="{% url 'citydelete' %}">Delete City</option>
-                           <option value="{% url 'routedelete' %}">Delete Route</option>
-                           <option value="{% url 'workerdelete' %}">Delete driver</option>
-    <option value="{% url 'delete_ticket' %}">Delete Ticket</option>
-                           </select>
-                           <li class="footer_nav_item"><a href="{% url 'logout' %}" style="color:white;margin-left:50px;">Logout</a></li>
-
-							</ul>
-						</div>
-					</div>
-				</div>
-</div>
-				</nav>
-				-->
-
-
-
-
 </header>								
 <div class="container fill_height">
 <div class="row fill_height">
@@ -216,19 +152,6 @@
         <h5 style="margin-left: 40px; color: green;"><b>{{ success }}</b><span class="symbol">✔</span></h5>
     </div>
 {% endif %}
-
-
-<!--
-	{% if error %}
-    <div class="success">
-            <h4 style="color: red; margin-left: 60px; margin-top:-500px;display: inline-block; white-space: nowrap;">
-  <b>{{ error }}</b>
-  <span style="margin-left: 20px;" class="symbol">X</span>
-</h4>
-    </div>
-    {% endif %}
-    -->
-
 
 
 <style>
@@ -417,32 +340,7 @@ function validatesideno(input) {
 }
 </script>
     </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-											</div>
+    											</div>
 										</div>
 									</div>
 								</div>		
@@ -578,7 +476,7 @@ function validatesideno(input) {
                            <option value="{% url 'citydelete' %}">Delete City</option>
                            <option value="{% url 'routedelete' %}">Delete Route</option>
                            <option value="{% url 'workerdelete' %}">Delete driver</option>
-    <option value="{% url 'delete_ticket' %}">Delete Ticket</option>
+    			   <option value="{% url 'delete_ticket' %}">Delete Ticket</option>
                            </select>
                            <li class="footer_nav_item"><a href="{% url 'logout' %}" style="color:white;margin-left:50px;">Logout</a></li>
 					</ul>

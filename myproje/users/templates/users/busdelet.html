@@ -123,26 +123,8 @@
         }
     }
 </style>
+</header>
 
-        </header>
-<div class="menu trans_500">
-                <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="menu_close_container"><div class="menu_close"></div></div>
-                        <div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
-                        <ul>
-                              <li class="main_nav_item"><a href="{% url 'home' %}">home</a></li>
-                                                                <li class="main_nav_item"><a href="{% url 'businsert' %}">insert bus</a></li>
-                                                                <li class="main_nav_item"><a href="{% url 'route' %}">route insert</a></li>
-                                                                <li class="main_nav_item"><a href="{% url 'routes' %}">routes</a></li>
-                                                                <li class="footer_nav_item"><a href="{% url 'users' %}">users</a></li>
-                                                                <li class="footer_nav_item"><a href="{% url 'buses' %}">buses</a></li>
-                                                                <li class="footer_nav_item"><a href="{% url 'admins' %}">admin acount</a></li>
-                                                                <li class="footer_nav_item"><a href="{% url 'admindelete' %}">delete account</a></li>
-                                                               <li class="footer_nav_item"><a href="{% url 'city' %}">insert city</a></li>
-                                                               <li class="footer_nav_item"><a href="{% url 'logout' %}">logout</a></li>
-                        </ul>
-                </div>
-        </div>
 
 
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -257,48 +239,6 @@
     </tbody>
 </table>
 
-<!--
-<table style="margin: 0 auto; width: 100%; max-width: 400px; background-color: lightgray; border-collapse: separate; border-spacing: 5px;">
-    <thead>
-        <tr>
-            <th style="background-color: green; color: white; padding: 6px; text-align: center; font-size: 14px;">No</th>
-            <th style="background-color: green; color: white; padding: 6px; text-align: center; font-size: 14px;">Plate No</th>
-            <th style="background-color: green; color: white; padding: 6px; text-align: center; font-size: 14px;">Side No</th>
-            <th style="background-color: green; color: white; padding: 6px; text-align: center; font-size: 14px;">No Seats</th>
-            <th style="background-color: green; color: white; padding: 6px; text-align: center; font-size: 14px;">Action</th>
-        </tr>
-    </thead>
-    <tbody style="background-color: lightgray;">
-        {% for bus in buses %}
-        <tr>
-            <td style="text-align: center; color: brown; padding: 8px; margin-right: 10px;">
-                <h4 style="margin: 0;">{{ forloop.counter }}</h4>
-            </td>
-            <td>
-                <form action="#" method="POST">
-                    {% csrf_token %}
-                    <input type="text" name="plate_no" value="{{ bus.plate_no }}" readonly
-                        style="height: 35px; width: 70px; text-align: center; color: blue; border-radius: 5px; border: 1px solid #ccc; font-weight: bold; margin: 5px; padding: 5px;">
-            </td>
-            <td>
-                <input type="text" name="sideno" value="{{ bus.sideno }}" readonly
-                    style="height: 35px; width: 70px; text-align: center; color: blue; border-radius: 5px; border: 1px solid #ccc; font-weight: bold; margin: 5px; padding: 5px;">
-            </td>
-            <td>
-                <input type="text" name="no_seats" value="{{ bus.no_seats }}" readonly
-                    style="height: 35px; width:70px; text-align: center; color: blue; border-radius: 5px; border: 1px solid #ccc; font-weight: bold; margin: 5px; margin-top:5px;padding: 5px;">
-            </td>
-            <td style="text-align: center;">
-	<button type="submit" class="btn btn-danger"
-        style="width: 70px; height: 30px; display: flex; align-items: center; justify-content: center; margin-right: 10px; margin-bottom: 10px;">
-    Delete
-</button>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
--->
 
 </br></br></br></br>
   <div class="copyright">

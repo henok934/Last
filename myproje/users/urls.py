@@ -1,12 +1,16 @@
 from django.urls import path
 from . import views
+from django.views.generic import RedirectView
 urlpatterns = [
     path('buses/', views.buses, name='buses'),
+    #path('forgot-password/', views.forgot_password, name='forgot_password'),
+    #path('reset-password/<str:token>/', reset_password, name='reset_password'),
+    path('change_password/', views.change_password, name='change_password'),
+    path('profile/change_password/', RedirectView.as_view(url='/change_password/', permanent=True)),
     path('', views.home, name='home'),
     path('registor/', views.registor, name='registor'),
     path('profile/', views.profile, name='profile'),
     path('buses/', views.buses, name='buses'),
-    path('offers/', views.offers, name='offers'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('login/login', views.login, name='login'),

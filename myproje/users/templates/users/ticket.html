@@ -40,63 +40,14 @@
 				</div>
 			</div>		
 		</div>
-		<!--
+			
+
 		<nav class="main_nav">
-			<div class="container">
-				<div class="row">
-					<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
-						<div class="logo_container">
-							<div class="logo"><a href="#"><img src="../static/images/logo.png" alt="">Ticket</a></div>
-						</div>
-						<div class="main_nav_container ml-auto">
-							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="{% url 'home' %}">home</a></li>
-								  <li class="main_nav_item"><a href="{% url 'get_ticket' %}">show ticket</a></li>
-								<li class="main_nav_item"><a href="{% url 'book' %}">book</a></li>
-							<li class="main_nav_item"><a href="{% url 'logout' %}">logout</a></li>
-							</ul>
-						</div>
-						<div class="content_search ml-lg-0 ml-auto">
-							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							width="17px" height="17px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-								<g>
-									<g>
-										<g>
-											<path class="mag_glass" fill="#FFFFFF" d="M78.438,216.78c0,57.906,22.55,112.343,63.493,153.287c40.945,40.944,95.383,63.494,153.287,63.494
-											s112.344-22.55,153.287-63.494C489.451,329.123,512,274.686,512,216.78c0-57.904-22.549-112.342-63.494-153.286
-											C407.563,22.549,353.124,0,295.219,0c-57.904,0-112.342,22.549-153.287,63.494C100.988,104.438,78.439,158.876,78.438,216.78z
-											M119.804,216.78c0-96.725,78.69-175.416,175.415-175.416s175.418,78.691,175.418,175.416
-											c0,96.725-78.691,175.416-175.416,175.416C198.495,392.195,119.804,313.505,119.804,216.78z"/>
-										</g>
-									</g>
-									<g>
-										<g>
-											<path class="mag_glass" fill="#FFFFFF" d="M6.057,505.942c4.038,4.039,9.332,6.058,14.625,6.058s10.587-2.019,14.625-6.058L171.268,369.98
-											c8.076-8.076,8.076-21.172,0-29.248c-8.076-8.078-21.172-8.078-29.249,0L6.057,476.693
-											C-2.019,484.77-2.019,497.865,6.057,505.942z"/>
-										</g>
-									</g>
-								</g>
-							</svg>
-						</div>
-						<form id="search_form" class="search_form bez_1">
-							<input type="search" class="search_content_input bez_1">
-						</form>
-						<div class="hamburger">
-							<i class="fa fa-bars trans_200"></i>
-						</div>
-					</div>
-				</div>
-			</div>	
-		</nav>
-		-->
-<nav class="main_nav">
                         <div class="container">
                                 <div class="row">
                                         <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
                                                 <div class="logo_container">
-                                                        <!--<div class="logo"><a href="#"><img src="../static/images/logo.png" alt="" style="color:blue;">ticket</a></div>-->
-                                                        <div class="logo">
+                                                <div class="logo">
     <a href="#">
         <img src="../static/images/logo.png" alt="">
         <span style="color: white;">ticket</span>
@@ -166,19 +117,8 @@
         </div>
     </div>
 </nav>
-	</header>
-	<div class="menu trans_500">
-		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-			<div class="menu_close_container"><div class="menu_close"></div></div>
-			<div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
-			<ul>
-				<li class="menu_item"><a href="{% url 'home' %}">home</a></li>
-				<li class="menu_item"><a href="{% url 'get_ticket' %}">show Tickets</a></li>
-				<li class="menu_item"><a href="{% url 'book' %}">book</a></li>
-				<li class="menu_item"><a href="{% url 'logout' %}">logout</a></li>
-			</ul>
-		</div>
-	</div></br> 
+</header>
+</br> 
 <style>
   .center-input {
     text-align: center;
@@ -193,11 +133,14 @@
 </style>
 </br></br></br></br></br></br></br>
 </br>
+
 {% if success %}
     <div class="success">
     <h3 style="color: green; margin-left: 150px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
+    <!--<img src="{{ barcode_image }}" alt="QR Code">-->
     </div>
 {% endif %}
+        <img src="{{ qr_code }}" alt="QR Code">
 
 {% if error %}
     <div class="success">
@@ -237,144 +180,6 @@
     <h3 style="text-align: center; margin-left: -60px; background-color: green; color: white; display: inline-block;">
 	 <strong style="background-color: green; color: white;">{{ remaining_seats }}:</strong><span style="background-color: green; color: white;">Seats Left</span></h3>
 <div class="search_panel active">
-
-
-<!--
-<form action="{% url 'ticket' %}" method="post" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-    {% csrf_token %}
-    <div class="search_item">
-        {{ new_account }}
-
-        <div style="text-align: center; margin: 0 auto;">
-            <h3 style="color: blue; white-space: nowrap; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center;">
-                <b class="from-label" style="color: green;">From:</b>
-                <b>{{ route.depcity }}</b>
-                <b style="color: green; margin-left: 10px;">To:</b>
-                <b>{{ route.descity }}</b>
-            </h3>
-        </div>
-
-        <style>
-            #firstname, #lastname, #phone {
-                width: 280px;
-                height: 40px;
-            }
-            .seat-selection {
-                display: flex;
-                flex-wrap: wrap;
-                margin: 5px 0;
-            }
-            .seat {
-                border: 1px solid #ccc;
-                padding: 10px;
-                margin: 5px;
-                cursor: pointer;
-            }
-            .seat.selected {
-                background-color: #4CAF50;
-                color: white;
-            }
-            .center-input {
-                text-align: center;
-            }
-        </style>
-
-        <div class="form-row">
-            <div style="display: flex; align-items: center; margin-left: 200px;">
-                <div style="margin-right: 10px;">First Name:</div>
-                <input type="text" id="firstname" name="firstname" maxlength="15" class="form-control" style="width: 200px; text-align: center; text-transform: capitalize;" required>
-            </div>
-
-            <div style="display: flex; align-items: center; margin-left: 200px;">
-                <div style="margin-right: 10px;">Last Name:</div>
-                <input type="text" id="lastname" name="lastname" maxlength="15" class="form-control" style="width: 200px; text-align: center; text-transform: capitalize;" required>
-            </div>
-
-            <div style="display: flex; align-items: center; margin-left: 200px;">
-                <div>Phone:</div>
-                <input type="text" id="phone" name="phone" maxlength="10" class="form-control" style="width: 200px; text-align: center;" required>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 20px;">
-            <button type="button" id="familyButton" class="btn btn-primary" onclick="enableSeatSelection();">Select Family Seats</button>
-            <button type="button" id="submitButton" class="btn btn-primary" onclick="bookTickets();" style="display: none;">Book</button>
-        </div>
-
-        <input type="hidden" name="depcity" value="{{ route.depcity }}" required readonly>
-        <input type="hidden" name="descity" value="{{ route.descity }}" required readonly>
-
-        <div class="seat-selection" style="margin: 20px;">
-            <label for="seat_no">Select Seats:</label>
-            <select name="seat_no" id="seat_no" class="form-control" multiple required>
-                {% for seat in all_seats %}
-                    <option value="{{ seat }}" {% if seat in booked_seats %}disabled{% endif %}>
-                        {{ seat }}{% if seat in booked_seats %} (Booked){% endif %}
-                    </option>
-                {% endfor %}
-            </select>
-        </div>
-
-        <div id="seat-message" style="color: blue; display: none;"></div>
-        <div id="total-price" style="color: green; margin-top: 20px; display: none;"></div>
-    </div>
-</form>
-
-<script>
-let ticketPrice = {{ route.price|default:'0' }}; // Price per ticket
-
-function enableSeatSelection() {
-    document.getElementById('seat_no').disabled = false;
-    document.getElementById('familyButton').style.display = 'none';
-    document.getElementById('submitButton').style.display = 'inline-block';
-}
-
-function bookTickets() {
-    const selectedSeats = Array.from(document.getElementById('seat_no').selectedOptions).map(option => option.value);
-    const firstname = document.getElementById('firstname').value;
-    const lastname = document.getElementById('lastname').value;
-    const phone = document.getElementById('phone').value;
-
-    if (selectedSeats.length === 0) {
-        alert("Please select at least one seat.");
-        return;
-    }
-
-    // Create a hidden input for selected seats
-    const seatInput = document.createElement('input');
-    seatInput.type = 'hidden';
-    seatInput.name = 'selected_seats';
-    seatInput.value = selectedSeats.join(',');
-
-    // Create a hidden input for total price
-    const priceInput = document.createElement('input');
-    priceInput.type = 'hidden';
-    priceInput.name = 'total_price';
-    priceInput.value = selectedSeats.length * ticketPrice;
-
-    // Append inputs to the form
-    document.getElementById('search_form_1').appendChild(seatInput);
-    document.getElementById('search_form_1').appendChild(priceInput);
-
-    // Submit the form
-    document.getElementById('search_form_1').submit();
-}
-
-// Update total price when seat selection changes
-document.getElementById('seat_no').addEventListener('change', function() {
-    const selectedSeats = Array.from(this.selectedOptions).length;
-    const total = selectedSeats * ticketPrice;
-    const totalPriceDiv = document.getElementById('total-price');
-
-    if (selectedSeats > 0) {
-        totalPriceDiv.textContent = "Total Price: " + total + " (for " + selectedSeats + " seats)";
-        totalPriceDiv.style.display = 'block';
-    } else {
-        totalPriceDiv.style.display = 'none';
-    }
-});
-</script>
--->
 
 <form action="{% url 'ticket' %}" method="post" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 	   {% csrf_token %}
@@ -706,6 +511,7 @@ function validateSeatNo(input) {
 		</div>
 </div>
 </div>
+
 
 <div class="copyright">
                 <div class="container">

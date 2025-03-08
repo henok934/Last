@@ -14,13 +14,8 @@
 <link rel="stylesheet" type="text/css" href="../static/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="../static/styles/responsive.css">
 </head>
-
-
-
 <body style="background-color: lightblue;">
-
 <div class="super_container">
-               
 <header class="header">
                 <div class="top_bar">
                         <div class="container">
@@ -46,7 +41,6 @@
                                 </div>
                         </div>
                 </div>
-
 		<nav class="main_nav">
                         <div class="container">
                                 <div class="row">
@@ -54,14 +48,23 @@
                                                 <div class="logo_container">
                                                         <div class="logo"><a href="#"><img src="../static/images/logo.png" alt="">ticket</a></div>
                                                 </div>
-                                                <div class="main_nav_container ml-auto">
-                                                        <ul class="main_nav_list">
-                                                                <li class="main_nav_item"><a href="{% url 'home' %}">home</a></li>
-                                                                <li class="main_nav_item"><a href="{% url 'about' %}">About us</a></li>
-                                                                <li class="main_nav_item"><a href="{% url 'offers' %}">cheeck route</a></li>
-                                                                <li class="main_nav_item"><a href="{% url 'comment' %}">comment</a></li>
-                                                        </ul>
-                                                </div>
+                                                
+		<div class="menu trans_500">
+                <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+
+
+                        <div class="menu_close_container"><div class="menu_close"></div></div>
+                        <div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
+                       		 <ul class="main_nav_list">
+                                    <li class="main_nav_item"><a href="{% url 'home' %}">home</a></li>
+                                    <li class="main_nav_item"><a href="{% url 'about' %}">About us</a></li>
+                                    <li class="main_nav_item"><a href="{% url 'comment' %}">comment</a></li>
+                               	</ul>
+
+                	</div>
+        		</div>
+
+
                                                 <div class="content_search ml-lg-0 ml-auto">
                                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                         width="17px" height="17px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
@@ -96,18 +99,7 @@
                         </div>
                 </nav>
         </header>
-<div class="menu trans_500">
-                <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="menu_close_container"><div class="menu_close"></div></div>
-                        <div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
-                        <ul>
-                                <li class="menu_item"><a href="{% url 'home' %}">home</a></li>
-                                <li class="menu_item"><a href="{% url 'about' %}">about us</a></li>
-                                <li class="menu_item"><a href="{% url 'offers' %}">cheeck route</a></li>
-                                <li class="menu_item"><a href="{% url 'comment' %}">comment</a></li>
-                        </ul>
-                </div>
-        </div>
+
 	</br></br></br></br></br></br></br></br></br></br></br></br>
 	<h1 style="margin-left:300px;color:brown;"><b>Show Route Info</b> </h1></br>
 
@@ -162,7 +154,6 @@
                                                                 <li class="footer_nav_item"><a href="{% url 'home' %}">home</a></li>
                                                                 <li class="footer_nav_item"><a href="{% url 'about' %}">about us</a></li>
                                                                 <li class="footer_nav_item"><a href="{% url 'comment' %}">comment</a></li>
-                                                                <li class="footer_nav_item"><a href="{% url 'offers' %}">cheeck route</a></li>
 
                                                         </ul>
                                                 </div>
