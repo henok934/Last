@@ -1,5 +1,4 @@
 attrs==21.2.0
-cElementTree==1.0.2-20050302
 colorama==0.4.4
 ConfigParser==7.2.0
 coverage==7.7.1
