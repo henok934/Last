@@ -5,6 +5,7 @@ coverage==7.7.1
 cryptography==3.4.8
 Django==5.1.6
 dl==0.1.0
+elementtree==1.2.7
 docutils==0.21.2
 elementtree==1.2.6-20050316
 filelock==3.6.0
