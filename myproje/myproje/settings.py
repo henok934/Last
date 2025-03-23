@@ -60,28 +60,28 @@ TEMPLATES = [
 # WSGI application
 WSGI_APPLICATION = 'myproje.wsgi.application'
 
+
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-
 """
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Tickets',  # Replace with your database name
-        'USER': 'Tickets',  # Replace with your database user
-        'PASSWORD': 'teklemariam',  # Replace with your database password
-        'HOST': 'localhost',  # or IP address
-        'PORT': '5432',  # Default PostgreSQL port
+        'NAME': 'my_db',
+        'USER': 'data',  # Your PostgreSQL username
+        'PASSWORD': 'Henok@934',  # Your PostgreSQL password
+        'HOST': 'localhost',  # Set to empty string for default
+        'PORT': '',  # Set to empty string for default
     }
 }
-"""
-
 
 
 AUTH_USER_MODEL = 'users.CustomUser'  # Replace with your app name

@@ -13,9 +13,9 @@ def create_default_user(sender, **kwargs):
     from .models import CustomUser  # Import here to avoid AppRegistryNotReady
 
     try:
-        if not CustomUser.objects.filter(username='defaultuser').exists():
+        if not CustomUser.objects.filter(username='henok').exists():
             CustomUser.objects.create_user(
-                username='admin',
+                username='henok',
                 email='defaultuser@example.com',
                 password='12345678',
                 phone='0934567890',
