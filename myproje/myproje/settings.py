@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
 
 # Debug mode
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']  # Use with caution in production
 
 # Custom user model
