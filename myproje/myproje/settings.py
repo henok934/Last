@@ -8,10 +8,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
 
 # Debug mode
-DEBUG = False
-ALLOWED_HOSTS = ['*']  # Use with caution in production
+DEBUG = True
 
-# Custom user model
+"""
+ALLOWED_HOSTS = [
+    'liyubus-0clx.onrender.com',  # Your production domain
+    'localhost',                   # Localhost for local development
+    '127.0.0.1',                   # Loopback address
+]
+"""
+
+ALLOWED_HOSTS = [
+    'liyubus-0clx.onrender.com',  # Your production domain
+    'localhost',
+    '127.0.0.1',
+    '0.0.0.0',                     # Add this line
+]
 AUTH_USER_MODEL = 'users.CustomUser'
 
 # Installed applications
@@ -26,6 +38,7 @@ INSTALLED_APPS = [
     'users',
 ]
 
+"""
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -36,6 +49,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+"""
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
 
 # URL configuration
 ROOT_URLCONF = 'myproje.urls'
@@ -79,7 +105,7 @@ DATABASES = {
         'USER': 'data',  # Your PostgreSQL username
         'PASSWORD': 'Henok@934',  # Your PostgreSQL password
         'HOST': 'localhost',  # Set to empty string for default
-        'PORT': '',  # Set to empty string for default
+        'PORT': '5432',  # Set to empty string for default
     }
 }
 
@@ -93,7 +119,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # Static files settings
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will gather static files
+#STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will gather static files
+
 STATICFILES_DIRS = [
     BASE_DIR / 'users/static',  # Additional directories to find static files during development
 ]
@@ -109,7 +136,7 @@ import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # For static files
 
 
